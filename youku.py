@@ -28,9 +28,9 @@ def getM3U8(vid, _m_h5_tk, _m_h5_tk_enc, cna, ckey):
     callback='mtopjsonp1'
 
     t = getTM()
-    steal_params = {"ccode":"0502","client_ip":"192.168.1.1","utid":cna,"client_ts":t[0:10],"version":"4.0.76","ckey":ckey}
-    biz_params = {"vid": vid, "current_showid":"461677", "preferClarity":5, "media_type": "standard,subtitle", "app_ver": "4.0.76", "extag": "EXT-X-PRIVINF", "play_ability":16782592, "master_m3u8":1, "drm_type":19, "key_index": "web01", "encryptR_client": "yBj8F8UD1reCWzQ44qVuLg==","local_vid": vid, "skh":1}
-    ad_params = {"vs":"1.0","pver":"4.0.76","sver":"2.0","site":1,"aw":"w","fu":0,"d":"0","bt":"pc","os":"win","osv":"10","dq":"auto","atm":"","partnerid":"null","wintype":"interior","isvert":0,"vip":0,"emb":"","p":1,"rst":"mp4","needbf":2,"avs":"1.0"}
+    steal_params = {"ccode":"0502","client_ip":"192.168.1.1","utid":cna,"client_ts":t[0:10],"version":"9.4.15","ckey":ckey}
+    biz_params = {"vid": vid, "current_showid":"461677", "preferClarity":5, "media_type": "standard,subtitle", "app_ver": "9.4.15", "extag": "EXT-X-PRIVINF", "play_ability":16782592, "master_m3u8":1, "drm_type":19, "key_index": "web01", "encryptR_client": "yBj8F8UD1reCWzQ44qVuLg==","local_vid": vid, "skh":1}
+    ad_params = {"vs":"1.0","pver":"9.4.15","sver":"2.0","site":1,"aw":"w","fu":0,"d":"0","bt":"pc","os":"win","osv":"10","dq":"auto","atm":"","partnerid":"null","wintype":"interior","isvert":0,"vip":0,"emb":"","p":1,"rst":"mp4","needbf":2,"avs":"1.0"}
     data = {"steal_params":str(steal_params).replace('\'', r'\"'), "biz_params":str(biz_params).replace('\'', r'\"'), "ad_params":str(ad_params).replace('\'', r'\"')}
     data = str(data).replace('\'', r'"').replace('\\\\', '\\').replace(" ","")
     sign = getSign(cookie["_m_h5_tk"].split('_')[0]+"&"+t+"&"+appKey+"&"+data)
